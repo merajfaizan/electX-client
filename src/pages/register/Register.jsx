@@ -91,10 +91,10 @@ const Register = () => {
             if (data.acknowledged) {
               handleUpdateUserProfile(name, image);
               swal("Good job!", "Successfully Registered", "success");
-              navigate("/");
             } else {
               toast.error("something is wrong, please try again.");
             }
+            navigate("/");
           })
           .catch((err) => console.error(err));
       })

@@ -28,7 +28,7 @@ const Navbar = () => {
           </label>
           <ul
             tabIndex={0}
-            className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52 font-semibold"
+            className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow rounded-box w-52 font-semibold bg-white"
           >
             <li>
               <Link to={"/home"}>Home</Link>
@@ -101,7 +101,7 @@ const Navbar = () => {
                 src={user.photoURL}
                 alt="user-image"
               />
-              <span className="text-sm font-semibold">{user.displayName}</span>
+              <span className="hidden md:block text-sm font-semibold">{user.displayName}</span>
             </div>
             <button onClick={logout} className="hidden md:block btn text-white">
               Logout
