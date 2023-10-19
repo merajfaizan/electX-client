@@ -57,9 +57,9 @@ const Home = () => {
         </div>
       </div>
       {/* 6 types of brands category */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3 my-5">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 my-5">
         <Link to={"/products"}>
-          <div className="card w-96 bg-base-100 shadow-xl">
+          <div className="card w-full h-[300px] bg-base-100 shadow-xl">
             <figure>
               <img
                 className="w-full h-full object-cover"
@@ -73,7 +73,7 @@ const Home = () => {
           </div>
         </Link>
         <Link to={"/products"}>
-          <div className="card w-96 bg-base-100 shadow-xl">
+          <div className="card w-full h-[300px] bg-base-100 shadow-xl">
             <figure>
               <img
                 className="w-full h-full object-cover"
@@ -87,7 +87,7 @@ const Home = () => {
           </div>
         </Link>
         <Link to={"/products"}>
-          <div className="card w-96 bg-base-100 shadow-xl">
+          <div className="card w-full h-[300px] bg-base-100 shadow-xl">
             <figure>
               <img
                 className="w-full h-full object-cover"
@@ -101,7 +101,7 @@ const Home = () => {
           </div>
         </Link>
         <Link to={"/products"}>
-          <div className="card w-96 bg-base-100 shadow-xl">
+          <div className="card w-full h-[300px] bg-base-100 shadow-xl">
             <figure>
               <img
                 className="w-full h-full object-cover"
@@ -115,7 +115,7 @@ const Home = () => {
           </div>
         </Link>
         <Link to={"/products"}>
-          <div className="card w-96 bg-base-100 shadow-xl">
+          <div className="card w-full h-[300px] bg-base-100 shadow-xl">
             <figure>
               <img
                 className="w-full h-full object-cover"
@@ -129,7 +129,7 @@ const Home = () => {
           </div>
         </Link>
         <Link to={"/products"}>
-          <div className="card w-96 bg-base-100 shadow-xl">
+          <div className="card w-full h-[300px] bg-base-100 shadow-xl">
             <figure>
               <img
                 className="w-full h-full object-cover"

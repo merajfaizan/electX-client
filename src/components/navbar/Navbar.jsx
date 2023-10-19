@@ -5,7 +5,7 @@ import logo from "../../assets/images/logo.png";
 import { Link } from "react-router-dom";
 
 const Navbar = () => {
-  const { user } = useContext(AuthContext);
+  const { user, logout } = useContext(AuthContext);
   return (
     <div className="navbar bg-primary text-black z-50 rounded-md">
       <div className="navbar-start">
@@ -41,11 +41,18 @@ const Navbar = () => {
             </li>
             {!user ? (
               <div className="md:hidden mt-2 flex flex-col gap-2">
-                <a className="btn text-white">Login</a>
-                <a className="btn text-white">Register</a>
+                <Link to={"/login"} className="btn text-white">
+                  Login
+                </Link>
+                <Link to={"/register"} className="btn text-white">
+                  Register
+                </Link>
               </div>
             ) : (
-              <button className="mt-5 block md:hidden btn text-white">
+              <button
+                onClick={logout}
+                className="mt-5 block md:hidden btn text-white"
+              >
                 Logout
               </button>
             )}
@@ -79,17 +86,26 @@ const Navbar = () => {
       <div className="navbar-end">
         {!user ? (
           <div className="hidden md:flex justify-center items-center gap-2">
-            <a className="btn text-white">Login</a>
-            <a className="btn text-white">Register</a>
+            <Link to={"/login"} className="btn text-white">
+              Login
+            </Link>
+            <Link to={"/register"} className="btn text-white">
+              Register
+            </Link>
           </div>
         ) : (
           <div className="flex justify-center items-center gap-2">
-            <img
-              className="w-12 h-12 rounded-full object-cover"
-              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRROt7YUKa7excpJt4CR59ZwHzhWDfV1mr0eQ&usqp=CAU"
-              alt="user-image"
-            />
-            <button className="hidden md:block btn text-white">Logout</button>
+            <div className="flex flex-col justify-center items-center">
+              <img
+                className="w-12 h-12 rounded-full object-cover"
+                src={user.photoURL}
+                alt="user-image"
+              />
+              <span className="text-sm font-semibold">{user.displayName}</span>
+            </div>
+            <button onClick={logout} className="hidden md:block btn text-white">
+              Logout
+            </button>
           </div>
         )}
       </div>

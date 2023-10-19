@@ -10,7 +10,7 @@ const PrivateRoute = ({ children }) => {
 
   if (loading) {
     return (
-      <div className="text-center">
+      <div className="text-center min-h-[70vh] flex flex-col justify-center items-center">
         <svg
           className="inline mr-2 w-8 h-8 text-gray-200 animate-spin dark:text-gray-600 fill-primary-color"
           viewBox="0 0 100 101"
