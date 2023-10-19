@@ -1,0 +1,12 @@
+/* eslint-disable no-unused-vars */
+import React from "react";
+
+const AddProduct = () => {
+  return (
+    <div>
+      <h1>add product page</h1>
+    </div>
+  );
+};
+
+export default AddProduct;

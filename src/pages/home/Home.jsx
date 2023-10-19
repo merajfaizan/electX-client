@@ -3,8 +3,8 @@ import React from "react";
 
 const Home = () => {
   return (
-    <div>
-      <h1>this is Home</h1>
+    <div className="min-h-screen">
+      <h1 className="">this is Home</h1>
     </div>
   );
 };
