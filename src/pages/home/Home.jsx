@@ -7,6 +7,42 @@ import banner4 from "../../assets/images/banners/Smart_Offer__banner.jpg";
 import { Link } from "react-router-dom";
 
 const Home = () => {
+  const brands = [
+    {
+      id: 1,
+      name: "Samsung",
+      image: "https://download.logo.wine/logo/Samsung/Samsung-Logo.wine.png",
+    },
+    {
+      id: 2,
+      name: "Apple",
+      image:
+        "https://download.logo.wine/logo/Apple_Inc./Apple_Inc.-Logo.wine.png",
+    },
+    {
+      id: 3,
+      name: "MI",
+      image:
+        "https://download.logo.wine/logo/Xiaomi_Mi_1/Xiaomi_Mi_1-Logo.wine.png",
+    },
+    {
+      id: 4,
+      name: "Sony",
+      image: "https://download.logo.wine/logo/Sony/Sony-Logo.wine.png",
+    },
+    {
+      id: 5,
+      name: "LG",
+      image:
+        "https://download.logo.wine/logo/LG_Corporation/LG_Corporation-Logo.wine.png",
+    },
+    {
+      id: 6,
+      name: "Dell",
+      image: "https://download.logo.wine/logo/Dell/Dell-Logo.wine.png",
+    },
+  ];
+
   return (
     <div className="rounded">
       {/* carousel of banners */}
@@ -58,90 +94,30 @@ const Home = () => {
       </div>
       {/* 6 types of brands category */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 my-5">
-        <Link to={"/products"}>
-          <div className="card w-full h-[300px] bg-base-100 shadow-xl">
-            <figure>
-              <img
-                className="w-full h-full object-cover"
-                src="https://download.logo.wine/logo/Samsung/Samsung-Logo.wine.png"
-                alt="brand-image"
-              />
-            </figure>
-            <div className="card-body">
-              <h2 className="card-title text-black font-semibold">Samsung</h2>
-            </div>
-          </div>
-        </Link>
-        <Link to={"/products"}>
-          <div className="card w-full h-[300px] bg-base-100 shadow-xl">
-            <figure>
-              <img
-                className="w-full h-full object-cover"
-                src="https://download.logo.wine/logo/Apple_Inc./Apple_Inc.-Logo.wine.png"
-                alt="brand-image"
-              />
-            </figure>
-            <div className="card-body">
-              <h2 className="card-title text-black font-semibold">Apple</h2>
-            </div>
-          </div>
-        </Link>
-        <Link to={"/products"}>
-          <div className="card w-full h-[300px] bg-base-100 shadow-xl">
-            <figure>
-              <img
-                className="w-full h-full object-cover"
-                src="https://download.logo.wine/logo/Xiaomi_Mi_1/Xiaomi_Mi_1-Logo.wine.png"
-                alt="brand-image"
-              />
-            </figure>
-            <div className="card-body">
-              <h2 className="card-title text-black font-semibold">MI</h2>
-            </div>
-          </div>
-        </Link>
-        <Link to={"/products"}>
-          <div className="card w-full h-[300px] bg-base-100 shadow-xl">
-            <figure>
-              <img
-                className="w-full h-full object-cover"
-                src="https://download.logo.wine/logo/Sony/Sony-Logo.wine.png"
-                alt="brand-image"
-              />
-            </figure>
-            <div className="card-body">
-              <h2 className="card-title text-black font-semibold">Sony</h2>
-            </div>
-          </div>
-        </Link>
-        <Link to={"/products"}>
-          <div className="card w-full h-[300px] bg-base-100 shadow-xl">
-            <figure>
-              <img
-                className="w-full h-full object-cover"
-                src="https://download.logo.wine/logo/LG_Corporation/LG_Corporation-Logo.wine.png"
-                alt="brand-image"
-              />
-            </figure>
-            <div className="card-body">
-              <h2 className="card-title text-black font-semibold">LG</h2>
-            </div>
-          </div>
-        </Link>
-        <Link to={"/products"}>
-          <div className="card w-full h-[300px] bg-base-100 shadow-xl">
-            <figure>
-              <img
-                className="w-full h-full object-cover"
-                src="https://download.logo.wine/logo/Dell/Dell-Logo.wine.png"
-                alt="brand-image"
-              />
-            </figure>
-            <div className="card-body">
-              <h2 className="card-title text-black font-semibold">Dell</h2>
-            </div>
-          </div>
-        </Link>
+        {brands?.map((brand, index) => {
+          const brandName = brand.name.toLocaleLowerCase();
+          return (
+            <Link key={index} to={`/products/${brandName}`}>
+              <div
+                key={brand.name}
+                className="card w-full h-[300px] bg-base-100 shadow-xl"
+              >
+                <figure>
+                  <img
+                    className="w-full h-full object-cover"
+                    src={brand.image}
+                    alt="brand-image"
+                  />
+                </figure>
+                <div className="card-body">
+                  <h2 className="card-title text-black font-semibold">
+                    {brand.name}
+                  </h2>
+                </div>
+              </div>
+            </Link>
+          );
+        })}
       </div>
     </div>
   );
