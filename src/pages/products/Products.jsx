@@ -17,7 +17,7 @@ const Products = () => {
       </div>
     );
   }
-  console.log(products);
+
   return (
     <div className="py-4">
       {/* carousel of banners */}
