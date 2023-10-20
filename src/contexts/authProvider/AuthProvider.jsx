@@ -19,7 +19,6 @@ export const auth = getAuth(app);
 export const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null);
   const [loading, setLoading] = useState(true);
-  const [cart, setCart] = useState([]);
 
   //   google provider
   const googleLoginProvider = (provider) => {
@@ -62,8 +61,6 @@ export const AuthProvider = ({ children }) => {
 
   const authInfo = {
     user,
-    cart,
-    setCart,
     loading,
     googleLoginProvider,
     HandleCreateUser,

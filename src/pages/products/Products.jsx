@@ -103,7 +103,7 @@ const Products = () => {
                   Details
                 </Link>
                 <Link
-                  to={`/product`}
+                  to={`/updateProduct/${product._id}`}
                   className="btn btn-outline text-black flex-grow"
                 >
                   Update

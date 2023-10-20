@@ -37,7 +37,7 @@ const Navbar = () => {
               <Link to={"/add-product"}>Add-product</Link>
             </li>
             <li>
-              <Link to={"/my-cart"}>My-Cart</Link>
+              <Link to={`/my-cart/${user?.uid}`}>My-Cart</Link>
             </li>
             {!user ? (
               <div className="md:hidden mt-2 flex flex-col gap-2">
@@ -59,14 +59,17 @@ const Navbar = () => {
           </ul>
         </div>
         <div>
-          <a className="flex justify-center items-center gap-2 cursor-pointer font-bold normal-case text-xl">
+          <Link
+            to={"/"}
+            className="flex justify-center items-center gap-2 cursor-pointer font-bold normal-case text-xl"
+          >
             <img
               className="bg-white w-12 h-12 rounded-full object-contain"
               src={logo}
               alt="logo"
             />
             ElecteX
-          </a>
+          </Link>
         </div>
       </div>
       {/* large device menu */}
@@ -101,7 +104,9 @@ const Navbar = () => {
                 src={user.photoURL}
                 alt="user-image"
               />
-              <span className="hidden md:block text-sm font-semibold">{user.displayName}</span>
+              <span className="hidden md:block text-sm font-semibold">
+                {user.displayName}
+              </span>
             </div>
             <button onClick={logout} className="hidden md:block btn text-white">
               Logout
