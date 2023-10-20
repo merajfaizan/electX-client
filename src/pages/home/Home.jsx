@@ -4,9 +4,12 @@ import banner1 from "../../assets/images/banners/Samsung_Banner.jpg";
 import banner2 from "../../assets/images/banners/gadget_sale_Banner.jpg";
 import banner3 from "../../assets/images/banners/Samsung_Refrigerator_Banner.jpg";
 import banner4 from "../../assets/images/banners/Smart_Offer__banner.jpg";
-import { Link } from "react-router-dom";
+import { Link, useLoaderData } from "react-router-dom";
+import ProductCard from "../../components/product-card/ProductCard";
 
 const Home = () => {
+  const products = useLoaderData();
+  const deals = products.slice(5, 8);
   const brands = [
     {
       id: 1,
@@ -118,6 +121,28 @@ const Home = () => {
             </Link>
           );
         })}
+      </div>
+      {/* Hot Deals of today */}
+      <div className="pt-5 text-black">
+        <div>
+          <h1 className="text-5xl font-semibold py-10">Deals Of The Day</h1>
+        </div>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+          {deals?.map((product) => (
+            <ProductCard key={product._id} product={product} />
+          ))}
+        </div>
+      </div>
+      {/* latest products */}
+      <div className="pt-5 text-black">
+        <div>
+          <h1 className="text-5xl font-semibold py-10">Latest Products</h1>
+        </div>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+          {products?.map((product) => (
+            <ProductCard key={product._id} product={product} />
+          ))}
+        </div>
       </div>
     </div>
   );

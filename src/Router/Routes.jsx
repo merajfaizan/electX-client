@@ -19,16 +19,16 @@ const router = createBrowserRouter([
       {
         path: "/",
         element: <Home />,
-      },
-      {
-        path: "/home",
-        element: <Home />,
+        loader: async () =>
+          await fetch(`https://electricshop.vercel.app/products`),
       },
       {
         path: "/products/:brand",
         element: <Products />,
         loader: async ({ params }) =>
-          await fetch(`http://localhost:5000/products/${params.brand}`),
+          await fetch(
+            `https://electricshop.vercel.app/products/${params.brand}`
+          ),
       },
       {
         path: "/product/:id",
@@ -38,7 +38,7 @@ const router = createBrowserRouter([
           </PrivateRoute>
         ),
         loader: async ({ params }) =>
-          await fetch(`http://localhost:5000/product/${params.id}`),
+          await fetch(`https://electricshop.vercel.app/product/${params.id}`),
       },
       {
         path: "/updateProduct/:id",
@@ -48,7 +48,7 @@ const router = createBrowserRouter([
           </PrivateRoute>
         ),
         loader: async ({ params }) =>
-          await fetch(`http://localhost:5000/product/${params.id}`),
+          await fetch(`https://electricshop.vercel.app/product/${params.id}`),
       },
       {
         path: "/add-product",
@@ -66,7 +66,7 @@ const router = createBrowserRouter([
           </PrivateRoute>
         ),
         loader: async ({ params }) =>
-          await fetch(`http://localhost:5000/users/${params.uid}`),
+          await fetch(`https://electricshop.vercel.app/users/${params.uid}`),
       },
     ],
   },

@@ -18,7 +18,7 @@ const MyCart = () => {
 
   const handleRemove = async (id) => {
     try {
-      const res = await fetch(`http://localhost:5000/removeItem`, {
+      const res = await fetch(`https://electricshop.vercel.app/removeItem`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -32,7 +32,7 @@ const MyCart = () => {
       const data = await res.json();
       if (data) {
         toast.success("Product removed from your cart successfully");
-        const res = await fetch(`http://localhost:5000/users/${user.uid}`);
+        const res = await fetch(`https://electricshop.vercel.app/users/${user.uid}`);
         const data = await res.json();
         setUser(data);
       } else {

@@ -11,7 +11,7 @@ const ProductDetails = () => {
 
   const handleCart = async () => {
     const uid = user.uid;
-    const res = await fetch(`http://localhost:5000/users/${uid}`, {
+    const res = await fetch(`https://electricshop.vercel.app/users/${uid}`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

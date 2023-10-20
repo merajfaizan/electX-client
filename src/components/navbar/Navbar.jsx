@@ -31,7 +31,7 @@ const Navbar = () => {
             className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow rounded-box w-52 font-semibold bg-white"
           >
             <li>
-              <Link to={"/home"}>Home</Link>
+              <Link to={"/"}>Home</Link>
             </li>
             <li>
               <Link to={"/add-product"}>Add-product</Link>
@@ -76,13 +76,13 @@ const Navbar = () => {
       <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal px-1 font-semibold">
           <li>
-            <Link to={"/home"}>Home</Link>
+            <Link to={"/"}>Home</Link>
           </li>
           <li>
             <Link to={"/add-product"}>Add-product</Link>
           </li>
           <li>
-            <Link to={"/my-cart"}>My-Cart</Link>
+            <Link to={`/my-cart/${user?.uid}`}>My-Cart</Link>
           </li>
         </ul>
       </div>

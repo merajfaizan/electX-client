@@ -22,7 +22,7 @@ const AddProduct = () => {
     e.preventDefault();
     const form = e.target;
     try {
-      const res = await fetch("http://localhost:5000/products", {
+      const res = await fetch("https://electricshop.vercel.app/products", {
         method: "POST",
         headers: {
           "content-type": "application/json",

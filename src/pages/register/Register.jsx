@@ -27,7 +27,7 @@ const Register = () => {
           email: detaileduser.email,
           cart: [],
         };
-        fetch("http://localhost:5000/users", {
+        fetch("https://electricshop.vercel.app/users", {
           method: "POST",
           headers: {
             "content-type": "application/json",
@@ -79,7 +79,7 @@ const Register = () => {
           password: password,
           cart: [],
         };
-        fetch("http://localhost:5000/users", {
+        fetch("https://electricshop.vercel.app/users", {
           method: "POST",
           headers: {
             "content-type": "application/json",
