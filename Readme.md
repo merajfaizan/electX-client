@@ -4,7 +4,7 @@ Welcome to our Electronic E-commerce Website, your one-stop destination for all 
 
 ## [Live Link](https://brandshop-12571.web.app/)
 
-## [Server Side Repo](https://github.com/programming-hero-web-course-4/b8a10-brandshop-server-side-merajfaizan)
+## [Server Side Repo](https://github.com/merajfaizan/electX-server)
 
 ## Key Features
 
